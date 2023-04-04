@@ -36,17 +36,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "your-issuer",
-            ValidAudience = "your-audience",
+            ValidIssuer = "issuer",
+            ValidAudience = "audience",
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aaaaaaaaaaaaaavvvvvvvvvvvvvvvvvsssssssssssssss"))
         };
     });
 builder.Services.AddAuthorization(options =>
 {
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-    .RequireAuthenticatedUser()
-    .Build();
+    options.FallbackPolicy = new AuthorizationPolicyBuilder().AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+    .RequireAuthenticatedUser().Build();
 });
 
 var app = builder.Build();
@@ -62,7 +60,8 @@ app.MapGet("/customers", [ProducesResponseType(200, Type = (typeof(Customer)))]
 {
     return repo.GetAll();
 
-});
+}).AllowAnonymous();
+//.RequireAuthorization();
 app.MapGet("/customers{id}", ([FromServices] CustomerRepository repo, Guid id) =>
 {
     var customer = repo.GetById(id);

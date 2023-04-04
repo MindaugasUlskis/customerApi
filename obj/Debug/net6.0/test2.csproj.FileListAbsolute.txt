@@ -38,3 +38,8 @@ C:\Users\umind\source\repos\test2\bin\Debug\net6.0\Microsoft.IdentityModel.Proto
 C:\Users\umind\source\repos\test2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\umind\source\repos\test2\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\umind\source\repos\test2\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\umind\source\repos\test2\bin\Debug\net6.0\{}\web.config
+C:\Users\umind\source\repos\test2\bin\Debug\net6.0\{}\appsettings.Development.json
+C:\Users\umind\source\repos\test2\bin\Debug\net6.0\{}\appsettings.json
+C:\Users\umind\source\repos\test2\bin\Debug\net6.0\{}\test2.deps.json
+C:\Users\umind\source\repos\test2\bin\Debug\net6.0\{}\test2.runtimeconfig.json
